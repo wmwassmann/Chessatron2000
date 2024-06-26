@@ -1,12 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ChessLogic.PieceTypes
+namespace ChessLogic
 {
-    internal class Piece
+    public abstract class Piece
     {
+        public abstract PieceType Type { get; }
+        public abstract Player Color { get; }
+        public bool HasMoved { get; set; } = false;
+        public abstract Piece Copy();
+
+
     }
 }
