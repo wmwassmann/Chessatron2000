@@ -20,7 +20,10 @@ namespace ChessLogic
 
         public override void Execute(Board board)
         {
-
+            Piece piece = board[FromPos];
+            board[ToPos] = piece;
+            board[FromPos] = null;
+            piece.HasMoved = true;
         }
     }
 }
